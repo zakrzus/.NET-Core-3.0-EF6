@@ -1,4 +1,4 @@
-# .NET Core 3.0 & Entity Framework 6
+# .NET Core 3.0 & Entity Framework 6 - Relational DB
 
 Description how to configure a relational database in EF6 in .NET Core 3.0 step by step.
 
