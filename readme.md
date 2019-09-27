@@ -44,6 +44,10 @@ public class Post
     }
 ```
 
+To configure a relationship in the Fluent API, you start by identifying the navigation properties that make up the relationship. HasOne or HasMany identifies the navigation property on the entity type
+            you are beginning the configuration on. You then chain a call to WithOne or WithMany to identify the inverse navigation. HasOne/WithOne are used for reference navigation properties and HasMany/WithMany
+            are used for collection navigation properties.
+
 ### BloggingContext.cs
 ```c#
 public class BloggingContext : DbContext
@@ -59,10 +63,6 @@ public class BloggingContext : DbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /* 
-            To configure a relationship in the Fluent API, you start by identifying the navigation properties that make up the relationship. HasOne or HasMany identifies the navigation property on the entity type
-            you are beginning the configuration on. You then chain a call to WithOne or WithMany to identify the inverse navigation. HasOne/WithOne are used for reference navigation properties and HasMany/WithMany
-            are used for collection navigation properties.
-
             https://docs.microsoft.com/pl-pl/ef/core/modeling/relationships
             */
             modelBuilder.Entity<Blog>().HasMany(s => s.Posts).WithOne(s => s.Blog);
